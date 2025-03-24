@@ -28,14 +28,14 @@ Huanyi Chen recently earned a PhD in Electrical and Computer Engineering from
 the University of Waterloo under the supervision of Dr. Paul A.S. Ward. His
 research focuses on computer science and engineering education, focusing on
 developing data-driven models to understand learning processes and designing
-[high-quality automated assessments](<https://www.socassess.org/>) that provide
+[high-quality automated assessments](https://www.socassess.org/) that provide
 effective formative feedback to support learning.
 
 Huanyi gained extensive teaching experience throughout his graduate studies. In
 2021 and 2022, he taught **Data Structures and Algorithms** and **Operating
 Systems** at Conestoga College. He later served as a sessional instructor at the
 University of Waterloo, teaching [Programming for
-Performance](<https://github.com/h365chen/ece459>) in 2023 and 2024.
+Performance](https://github.com/h365chen/ece459) in 2023 and 2024.
 
 Huanyi is now seeking a teaching-stream faculty position where he can apply his
 expertise in computer science and engineering education to foster student

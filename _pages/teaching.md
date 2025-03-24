@@ -12,7 +12,7 @@ nav_order: 2
 ### As an Instructor
 
 | Term |    Course | Title                                                 | Institution            |
-|-----:|----------:|-------------------------------------------------------|------------------------|
+| ---: | --------: | ----------------------------------------------------- | ---------------------- |
 |  W24 |   ECE 459 | Programming for Performance                           | University of Waterloo |
 |  W23 |   ECE 459 | Programming for Performance                           | University of Waterloo |
 |  S22 | INFO 8110 | Operating Systems Design                              | Conestoga College      |
@@ -25,7 +25,7 @@ nav_order: 2
 ### As a Teaching Assistant (TA)
 
 |  Course | Title                                    | Institution            |
-|--------:|------------------------------------------|------------------------|
+| ------: | ---------------------------------------- | ---------------------- |
 | ECE 459 | Programming for Performance [^1]         | University of Waterloo |
 | ECE 356 | Database Systems [^1]                    | University of Waterloo |
 |  SE 350 | Operating Systems                        | University of Waterloo |
@@ -35,4 +35,3 @@ nav_order: 2
 ---
 
 [^1]: Being a TA for multiple terms
-
