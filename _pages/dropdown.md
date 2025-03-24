@@ -1,13 +1,11 @@
 ---
 layout: page
-title: submenus
+title: More
 nav: true
-nav_order: 8
+nav_order: 6
 dropdown: true
 children:
-  - title: bookshelf
-    permalink: /books/
-  - title: divider
-  - title: blog
-    permalink: /blog/
+  - title: CV
+    newtab: true
+    permalink: /assets/pdf/ChenHuanyi.pdf
 ---
