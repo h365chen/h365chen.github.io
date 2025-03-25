@@ -37,6 +37,13 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/assets/pdf/ChenHuanyi.pdf";
               },
+            },{id: "dropdown-tennis",
+              title: "Tennis",
+              description: "",
+              section: "Dropdown",
+              handler: () => {
+                window.location.href = "/tennis/";
+              },
             },{
         id: 'social-email',
         title: 'email',
