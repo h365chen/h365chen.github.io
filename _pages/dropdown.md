@@ -8,4 +8,7 @@ children:
   - title: CV
     newtab: true
     permalink: /assets/pdf/ChenHuanyi.pdf
+  - title: Tennis
+    newtab: false
+    permalink: /tennis/
 ---
