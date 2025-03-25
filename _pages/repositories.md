@@ -35,11 +35,27 @@ nav_order: 4
 <!-- {% endif %} -->
 <!-- {% endif %} -->
 
-{% if site.data.repositories.github_repos %}
+<!-- {% if site.data.repositories.github_repos %} -->
+
+<!-- <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center"> -->
+<!--   {% for repo in site.data.repositories.github_repos %} -->
+<!--     {% include repository/repo.liquid repository=repo %} -->
+<!--   {% endfor %} -->
+<!-- </div> -->
+<!-- {% endif %} -->
+
+---
+
+### SocAssess
+
+socassess is a command line tool designed to help instructors create
+high-quality automated assessments and provide effective formative feedback. It
+gives automated feedback only when it confidently identifies mistakes;
+otherwise, it seeks human feedback. See
+[https://socassess.org](https://socassess.org).
 
 <div class="repositories d-flex flex-wrap flex-md-row flex-column justify-content-between align-items-center">
-  {% for repo in site.data.repositories.github_repos %}
-    {% include repository/repo.liquid repository=repo %}
-  {% endfor %}
+    {% include repository/repo.liquid repository="h365chen/socassess" %}
 </div>
-{% endif %}
+
+---
