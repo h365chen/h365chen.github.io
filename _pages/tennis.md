@@ -12,11 +12,9 @@ I started learning tennis in July 2024. I enjoy playing tennis in my spare time.
         {%
             include video.liquid
             path="https://www.youtube.com/embed/KplttC1WN-w"
-            title="Huanyi Chen"
-            class="rounded z-depth-1"
-            caption="I was rallying on a random date."
-            width="800"
-            height="480"
+            title="Huanyi's Rally"
+            class="img-fluid rounded z-depth-1"
+            caption="Rally in 2025"
         %}
     </div>
 </div>
