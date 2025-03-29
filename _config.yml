@@ -88,7 +88,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # -----------------------------------------------------------------------------
 
 blog_name: Huanyi's blog # blog_name will be displayed in your blog page
-blog_description: My random thoughts and ideas
+blog_description: A place for my teaching notes, stories, and ideas
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
@@ -181,8 +181,7 @@ exclude:
   - _data/venues.yml
   - _data/cv.yml
   - assets/json/resume.json
-  - _pages/blog.md
-  - _posts/
+  - _template_posts/
 
   - bin/
   - CONTRIBUTING.md
@@ -267,8 +266,8 @@ jekyll-archives:
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
 
-display_tags: ["formatting", "images", "links", "math", "code", "blockquotes"] # these tags will be displayed on the front page of your blog
-display_categories: ["external-services"] # these categories will be displayed on the front page of your blog
+display_tags: [] # these tags will be displayed on the front page of your blog
+display_categories: ["notes"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
