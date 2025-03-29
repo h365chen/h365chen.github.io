@@ -9,7 +9,14 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-teaching",
+  },{id: "nav-blog",
+          title: "Blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-teaching",
           title: "Teaching",
           description: "Courses that I taught, participated in, and enjoyed.",
           section: "Navigation",
@@ -44,7 +51,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/tennis/";
               },
-            },{
+            },{id: "post-finding-articulation-points-and-biconnected-components",
+        
+          title: "Finding Articulation Points and Biconnected Components",
+        
+        description: "An application of using Depth First Search (DFS) to find articulation points and biconnected components of a graph",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/DFS-Articulation-Points/";
+          
+        },
+      },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
