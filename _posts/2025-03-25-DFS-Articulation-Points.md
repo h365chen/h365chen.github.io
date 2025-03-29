@@ -13,7 +13,7 @@ I have created a nice little video for describing high-level overview of the app
     <div class="col-sm mt-3 mt-md-0 d-flex justify-content-center">
         {%
             include video.liquid
-            path="https://www.youtube.com/embed/YA19UtZhQJY"
+            path="https://www.youtube.com/embed/nddmCmp1Bng"
             title="Using DFS to Find Articulation Points and Biconnected Components"
             class="img-fluid rounded z-depth-1"
         %}
