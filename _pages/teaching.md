@@ -23,12 +23,12 @@ pretty_table: true
 
 ### As a Teaching Assistant (TA)
 
-|  Course | Title                                    | Institution            |
-|--------:|------------------------------------------|------------------------|
-| ECE 459 | Programming for Performance <sup>*</sup> | University of Waterloo |
-| ECE 356 | Database Systems <sup>*</sup>            | University of Waterloo |
-|  SE 350 | Operating Systems                        | University of Waterloo |
-| ECE 252 | Systems Programming and Concurrency      | University of Waterloo |
-| ECE 155 | Engineering Design with Embedded Systems | University of Waterloo |
+|  Course | Title                                     | Institution            |
+| ------: | ----------------------------------------- | ---------------------- |
+| ECE 459 | Programming for Performance <sup>\*</sup> | University of Waterloo |
+| ECE 356 | Database Systems <sup>\*</sup>            | University of Waterloo |
+|  SE 350 | Operating Systems                         | University of Waterloo |
+| ECE 252 | Systems Programming and Concurrency       | University of Waterloo |
+| ECE 155 | Engineering Design with Embedded Systems  | University of Waterloo |
 
-<sup>*</sup> Being a TA for multiple terms
+<sup>\*</sup> Being a TA for multiple terms
