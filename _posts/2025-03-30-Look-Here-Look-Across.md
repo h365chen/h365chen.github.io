@@ -69,8 +69,8 @@ Many-to-One?
 This interpretation is very intuitive since from left to right, the letters can
 be read as "M-to-1".
 
-But wait, the semantics seem confusing. Why can there be *many* (*i.e.*, an
-unlimited number of) instructors who `advise` *one* student?
+But wait, the semantics seem confusing. Why can there be _many_ (_i.e._, an
+unlimited number of) instructors who `advise` _one_ student?
 
 This interpretation does not make sense.
 
@@ -81,12 +81,12 @@ One-to-Many?
 
 ## Entity-Relationship (ER) & Unified Modeling Language (UML)
 
-**ER**, standing for *Entity-Relationship*, is a modeling technique proposed by
-[Chen in 1976](<https://dl.acm.org/doi/10.1145/320434.320440>). It was first
+**ER**, standing for _Entity-Relationship_, is a modeling technique proposed by
+[Chen in 1976](https://dl.acm.org/doi/10.1145/320434.320440). It was first
 proposed as an alternative technique for modeling data, intended to be more
 intuitive than directly using the relational model. While people today often
 think in terms of relational models (such as SQL tables) for data management, ER
-modeling remains very useful design and is now the *de facto* standard for
+modeling remains very useful design and is now the _de facto_ standard for
 database schema.
 
 **UML**, the Unified Modeling Language, proposed in 1990s, aims to provide a
@@ -101,15 +101,15 @@ cardinality constraints. We'll soon see why.
 
 ## It is Many-to-One in UML or Chen's ER
 
-UML refers to cardinality constraints as *association rules*. In UML's
+UML refers to cardinality constraints as _association rules_. In UML's
 interpretation, the diagram above is **many-to-one**. This is intuitive.
 
 Interestingly, this is also the interpretation in Chen's ER model.
 
 ## It is One-to-Many in the Textbook's ER
 
-However, in the ER model taught by textbooks like [*Database System
-Concepts*](<https://www.db-book.com>), the interpretation is **one-to-many**.
+However, in the ER model taught by textbooks like [_Database System
+Concepts_](https://www.db-book.com), the interpretation is **one-to-many**.
 
 The rationale is based on how ER diagrams are eventually translated into
 relational schemas. To make this translation more explicit, it helps to think
@@ -118,16 +118,15 @@ this way:
 - Each instructor can appear in `advise` up to `M` times;
 - Each student can appear in `advise` only once.
 
-The resulting relation, *e.g.*, the `Advise` SQL table, would then look like
+The resulting relation, _e.g._, the `Advise` SQL table, would then look like
 this. Note that there must be no duplication, as it is a relational model:
 
-| Instructor   | Student   |
-|:------------:|:---------:|
+|  Instructor  |  Student  |
+| :----------: | :-------: |
 | Instructor 1 | Student 1 |
 | Instructor 1 | Student 2 |
 | Instructor 1 | Student 3 |
-| ...          | ...       |
-
+|     ...      |    ...    |
 
 This is the stage where we check whether the cardinality constraint is
 satisfied. Looking at the relational schema, it clearly reflects a one-to-many
@@ -147,8 +146,8 @@ This distinction remains important even when there is only the `M` shown.
 
 The `M` can be interpreted as:
 
-- (UML or Chen's ER): For each *student*, there can be up to `M` *instructors*
-- (Textbook's ER): For each *instructor*, there can be up to `M` *students*
+- (UML or Chen's ER): For each _student_, there can be up to `M` _instructors_
+- (Textbook's ER): For each _instructor_, there can be up to `M` _students_
 
 This is what people refer to as **look here** and **look across**. It is "look
 here" in UML because the `M` is read along with the entity set on the **same**
