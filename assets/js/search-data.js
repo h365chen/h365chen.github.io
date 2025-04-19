@@ -51,7 +51,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/tennis/";
               },
-            },{id: "post-finding-articulation-points-and-biconnected-components",
+            },{id: "post-look-here-or-look-across",
+        
+          title: "Look Here or Look Across",
+        
+        description: "About interpreting cardinality constraints in UML and ER designs",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Look-Here-Look-Across/";
+          
+        },
+      },{id: "post-finding-articulation-points-and-biconnected-components",
         
           title: "Finding Articulation Points and Biconnected Components",
         
