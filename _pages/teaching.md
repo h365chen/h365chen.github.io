@@ -33,7 +33,11 @@ pretty_table: true
 | ECE 252 | Systems Programming and Concurrency       | University of Waterloo |
 | ECE 155 | Engineering Design with Embedded Systems  | University of Waterloo |
 
+<br>
+
 # Course Descriptions
+
+<br>
 
 <!-- ### University of Waterloo -->
 
