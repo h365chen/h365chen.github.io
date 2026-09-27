@@ -188,4 +188,4 @@ Referring to the cardinality constraints at the beginning of the post:
 
 How do we represent these constraints using numbers on the diagram?
 
-I'll explain that in a future post.
+I'll explain that in a [future post]({% post_url 2025-09-10-Unified-Cardinality-Constraints %}).
