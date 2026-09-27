@@ -34,6 +34,38 @@ ul.task-list input[type="checkbox"] {
   text-align: center;
 }
 
+// Embedded video
+//
+// Site override (al-folio-core#_sass/_components.scss)
+//
+// `_includes/video.liquid` emits `width="auto" height="auto"` on its <iframe>,
+// and `auto` is not a valid value for those attributes — they take a
+// non-negative integer. The browser drops the invalid values and falls back to
+// an iframe's default 300x150, so an embed renders tiny. On top of that the
+// include's <figure> is a flex item inside the caller's
+// `d-flex justify-content-center`, so it shrink-wraps the small frame and
+// centres it rather than filling the column.
+//
+// `:has()` scopes this to figures that actually hold a frame; `figure.liquid`
+// emits a <figure> too, and the images it wraps need no width of their own.
+figure:has(> iframe, > video) {
+  width: 100%;
+}
+
+// Only the frame gets the fixed ratio: a YouTube embed carries none of its own,
+// while a <video> file knows its real proportions and should keep them.
+figure > iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  max-width: 100%;
+}
+
+figure > video {
+  max-width: 100%;
+  height: auto;
+}
+
 // Card
 
 .card {
