@@ -76,23 +76,25 @@ jobs:
           sudo apt-get update && sudo apt-get install -y imagemagick
           pip3 install --upgrade nbconvert
 
-      - name: Run comments integration test 🧪
-        run: bash test/integration_comments.sh
+      # Four of the starter's seven integration scripts assert against the
+      # starter's own demo content and therefore cannot pass on a site that
+      # does not carry it. They are skipped here, with the reason:
+      #
+      #   integration_comments.sh      needs blog/2022/giscus-comments
+      #   integration_distill.sh       needs blog/2021/distill
+      #   integration_new_plugins.sh   needs blog/2022/rtl, blog/2025/marimo
+      #     -> this site keeps the example posts in _template_posts/, excluded
+      #   integration_bootstrap_compat.sh
+      #     -> asserts the compat stylesheet is absent from a default build,
+      #        but this site turns al_folio.compat.bootstrap on deliberately
+      #
+      # The remaining three are independent of content and still run here.
 
       - name: Run plugin toggle integration test 🔌
         run: bash test/integration_plugin_toggles.sh
-
-      - name: Run distill integration test 📄
-        run: bash test/integration_distill.sh
-
-      - name: Run bootstrap compatibility integration test 🧩
-        run: bash test/integration_bootstrap_compat.sh
 
       - name: Run upgrade CLI integration test ⬆️
         run: bash test/integration_upgrade_cli.sh
 
       - name: Run CSS minify integration test 🎨
         run: bash test/integration_css_minify.sh
-
-      - name: Run new plugin integration checks 🧩
-        run: bash test/integration_new_plugins.sh
