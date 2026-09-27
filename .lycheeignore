@@ -1,2 +1,7 @@
+# Hosts that reject non-browser clients: they answer 401/403 to the link
+# checker but open fine in a browser, so they are not broken links.
+dl.acm.org
+scholar.google.com
+unsplash.com
 linkedin.com
 reddit.com
