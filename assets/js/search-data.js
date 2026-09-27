@@ -51,7 +51,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/tennis/";
               },
-            },{id: "post-look-here-or-look-across",
+            },{id: "post-unified-cardinality-constraints",
+        
+          title: "Unified Cardinality Constraints",
+        
+        description: "About interpreting cardinality constraints in UML and ER designs",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Unified-Cardinality-Constraints/";
+          
+        },
+      },{id: "post-look-here-or-look-across",
         
           title: "Look Here or Look Across",
         
