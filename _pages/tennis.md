@@ -2,6 +2,8 @@
 layout: page
 permalink: /tennis/
 title: Tennis
+nav: true
+nav_order: 7
 description:
 ---
 

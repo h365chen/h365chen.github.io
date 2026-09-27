@@ -238,7 +238,6 @@ exclude:
   - _projects/
   - _news/
   - _data/venues.yml
-  - assets/json/resume.json
   - _template_posts/
 
   # --- repo scaffolding, never published ---
@@ -707,20 +706,24 @@ third_party_libraries:
 # Get external JSON data
 # -----------------------------------------------------------------------------
 
-jekyll_get_json:
-  - data: resume
-    json: assets/json/resume.json # it can also be an url
-
-jsonresume:
-  - basics
-  - work
-  - education
-  - publications
-  - projects
-  - volunteer
-  - awards
-  - certificates
-  - skills
-  - languages
-  - interests
-  - references
+# Unused: this site's CV lives in _data/cv.yml in RenderCV format. To switch to
+# the JSONResume format instead, restore the loader below, put your CV at
+# assets/json/resume.json, and set `cv_format: jsonresume` in _pages/cv.md.
+#
+# jekyll_get_json:
+#   - data: resume
+#     json: assets/json/resume.json # it can also be an url
+#
+# jsonresume:
+#   - basics
+#   - work
+#   - education
+#   - publications
+#   - projects
+#   - volunteer
+#   - awards
+#   - certificates
+#   - skills
+#   - languages
+#   - interests
+#   - references

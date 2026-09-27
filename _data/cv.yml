@@ -1,97 +1,115 @@
-- title: General Information
-  type: map
-  contents:
-    - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
+cv:
+  name: Huanyi Chen
+  label: PhD in Electrical and Computer Engineering
+  email: huanyi.chen@uwaterloo.ca
+  location: Ontario, Canada
+  website: https://h365chen.github.io
+  summary: >
+    I recently earned a PhD in Electrical and Computer Engineering from the University of Waterloo
+    under the supervision of Dr. Paul A.S. Ward. My research focuses on computer science and
+    engineering education, developing data-driven models to understand learning processes and
+    designing high-quality automated assessments that provide effective formative feedback to
+    support learning.
 
-- title: Education
-  type: time_table
-  contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+  social_networks:
+    - network: GitHub
+      username: h365chen
+    - network: LinkedIn
+      username: huanyichen
+    - network: Google Scholar
+      username: ibdj9O4AAAAJ
 
-- title: Experience
-  type: time_table
-  contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
+  address:
+    # al_folio_cv prints street/city/region/postalCode and has no country
+    # field, so the province and country travel together in `region`.
+    region: Ontario, Canada
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
+  sections:
+    Education:
+      - institution: University of Waterloo
+        location: Ontario, Canada
+        area: Electrical and Computer Engineering
+        studyType: PhD (Doctor of Philosophy)
+        start_date: 2018
+        end_date: 2024
+        highlights:
+          - "Thesis: From Understanding Learning Difficulties Among Students To Providing High-Quality Automated Feedback — [hdl.handle.net/10012/21102](https://hdl.handle.net/10012/21102)"
 
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
+      - institution: University of Waterloo
+        location: Ontario, Canada
+        area: Electrical and Computer Engineering
+        studyType: MASc (Master of Applied Science)
+        start_date: 2015
+        end_date: 2018
+        highlights:
+          - "Thesis: Predicting Student Performance Using Data From An Auto-Grading System — [hdl.handle.net/10012/13435](http://hdl.handle.net/10012/13435)"
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+      - institution: Beijing University of Posts and Telecommunications
+        location: Beijing, China
+        studyType: B.Eng (Bachelor of Engineering)
+        start_date: 2010
+        end_date: 2014
 
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    Experience:
+      - company: University of Waterloo
+        position: Instructor, ECE 459 Programming for Performance
+        location: Ontario, Canada
+        date: "Winter 2024"
 
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
+      - company: University of Waterloo
+        position: Instructor, ECE 459 Programming for Performance
+        location: Ontario, Canada
+        date: "Winter 2023"
 
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
+      - company: Conestoga College
+        position: Lecturer, INFO 8110 Operating Systems Design
+        location: Ontario, Canada
+        date: "Spring 2022"
 
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+      - company: Conestoga College
+        position: Lecturer, PROG 8130 Data Structures & Algorithms for Embedded Programming
+        location: Ontario, Canada
+        date: "Winter 2022"
+
+      - company: Conestoga College
+        position: Lecturer, EECE 2617 Embedded Operating System Development
+        location: Ontario, Canada
+        date: "Winter 2021"
+
+      - company: Conestoga College
+        position: Lecturer, INFO 8110 Operating Systems Design
+        location: Ontario, Canada
+        date: "Winter 2021"
+
+      - company: Amazon.com, Inc
+        position: Software Development Engineer Intern
+        location: Ontario, Canada
+        date: "Fall 2016"
+
+      - company: TP-Link Technologies Co., Ltd.
+        position: Software Development Engineer
+        location: Guangdong, China
+        start_date: 2014
+        end_date: 2015
+
+    Service:
+      - label: ITiCSE 2025
+        details: PC Member, Reviewer — 30th Annual Conference on Innovation and Technology in Computer Science Education
+
+      - label: ITiCSE 2024
+        details: PC Member, Reviewer — 29th Annual Conference on Innovation and Technology in Computer Science Education
+
+      - label: CEEA-ACÉG 2024
+        details: PC Member, Reviewer — Canadian Engineering Education Association Conference 2024
+
+      - label: SIGCSE TS 2024
+        details: PC Member, Reviewer — 55th ACM Technical Symposium on Computer Science Education
+
+      - label: ITiCSE 2023
+        details: PC Member, Reviewer — 28th Annual Conference on Innovation and Technology in Computer Science Education
+
+      - label: CEEA-ACÉG 2023
+        details: PC Member, Reviewer — Canadian Engineering Education Association Conference 2023
+
+      - label: SIGCSE TS 2023
+        details: PC Member, Reviewer — 54th ACM Technical Symposium on Computer Science Education
