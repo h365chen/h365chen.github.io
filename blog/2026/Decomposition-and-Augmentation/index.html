@@ -1,0 +1,223 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Decomposition and Augmentation | Huanyi Chen </title> <meta name="author" content="Huanyi Chen"> <meta name="description" content="About deriving implied cardinality constraints from the one that is written"> <meta name="keywords" content="huanyi, chen, jekyll, jekyll-theme, academic-website, portfolio-website, teaching, tennis, resume, cv, publication"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link rel="stylesheet" href="/assets/css/bootstrap-compat.css?v=aa8aa1241f76708eaa8c8fad88fe7955"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.css" integrity="sha256-zTN0r+0OKaIv2xqeNNIYxNk0pWJ6+IqPGc1iDgVzWF0=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.ico?v=d476c8e8ff17bb60cb800f7ec5437498"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://h365chen.github.io/blog/2026/Decomposition-and-Augmentation/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Huanyi</span> Chen </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">About </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">Blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/">Teaching </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">Publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/repositories/">Repositories </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/tennis/">Tennis </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="row"> <div class="col-sm-3"> <nav id="toc-sidebar" class="sticky-top toc toc-sidebar" aria-label="Table of contents" data-toc-collapse="expanded" data-toc-collapse-depth=""></nav> </div> <div class="col-sm-9"> <style type="text/css">
+    table {
+  margin-bottom: 2rem;
+}
+
+  </style> <div class="post"> <header class="post-header"> <h1 class="post-title">Decomposition and Augmentation</h1> <p class="post-meta"> Created on April 08, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/category/notes"> <i class="fa-solid fa-tag fa-sm"></i> notes</a> </p> </header> <article class="post-content"> <div id="markdown-content"> <h2 id="introduction">Introduction</h2> <p>The <a href="/blog/2026/Implicit-Cardinality-Constraints/">previous post</a> started from one written cardinality constraint on the ternary relationship set <code class="language-plaintext highlighter-rouge">guide</code>, and ended with four that follow from it. This post is about where those four come from: the two rules that produce them, what it means for one bound to follow from another, and what the notation has to do with functional dependencies.</p> <p>The constraint numbers below are that post’s. Constraint 10, <code class="language-plaintext highlighter-rouge">{Student} → {Instructor, Project}</code> with bound <code class="language-plaintext highlighter-rouge">(2, 2)</code>, is the written one; 5 and 6 are <code class="language-plaintext highlighter-rouge">{Instructor, Student} → {Project}</code> and <code class="language-plaintext highlighter-rouge">{Project, Student} → {Instructor}</code>; 8 and 9 are <code class="language-plaintext highlighter-rouge">{Student} → {Instructor}</code> and <code class="language-plaintext highlighter-rouge">{Student} → {Project}</code>.</p> <h2 id="decomposition-and-augmentation">Decomposition and Augmentation</h2> <p>We didn’t find the four implied constraints by staring. They came from two rules, and it’s worth naming them, because a program needs them by name.</p> <p><strong>Decomposition</strong> relates a group to a larger group that contains it. Each <code class="language-plaintext highlighter-rouge">q</code>-value a tuple has comes with at least one <code class="language-plaintext highlighter-rouge">s</code>, so the number of <code class="language-plaintext highlighter-rouge">q</code>s can never exceed the number of <code class="language-plaintext highlighter-rouge">(q, s)</code> pairs:</p> \[\begin{aligned} C_{\min}(R; p; q \cup s) &amp;\geq C_{\min}(R; p; q) \\ C_{\max}(R; p; q \cup s) &amp;\geq C_{\max}(R; p; q) \end{aligned}\] <p>Knowing a bound on <code class="language-plaintext highlighter-rouge">p</code> over the pair-group $q \cup s$, we can therefore bound <code class="language-plaintext highlighter-rouge">p</code> over the smaller group <code class="language-plaintext highlighter-rouge">q</code>. Constraint 10 is a bound on <code class="language-plaintext highlighter-rouge">{Student}</code> over <code class="language-plaintext highlighter-rouge">{Instructor, Project}</code>, so decomposing gives bounds on <code class="language-plaintext highlighter-rouge">{Student}</code> over <code class="language-plaintext highlighter-rouge">{Instructor}</code> and over <code class="language-plaintext highlighter-rouge">{Project}</code>: constraints 8 and 9, <code class="language-plaintext highlighter-rouge">(1, 2)</code> each. The maximum carries over unchanged. The minimum can drop, and does: the two pairs may name the same instructor. It can’t drop below 1, because a student who has a pair at all has an instructor.</p> <p><strong>Augmentation</strong> relates a group to a larger group that contains it on the other side. An <code class="language-plaintext highlighter-rouge">(p, s)</code>-pair determines a <code class="language-plaintext highlighter-rouge">p</code>, and the <code class="language-plaintext highlighter-rouge">q</code>s available to the pair are among those available to that <code class="language-plaintext highlighter-rouge">p</code>. So anything true of every <code class="language-plaintext highlighter-rouge">p</code> is true of every <code class="language-plaintext highlighter-rouge">(p, s)</code> as well, and the bound tightens with the requirement:</p> \[\begin{aligned} C_{\min}(R; p; q) &amp;\leq C_{\min}(R; p \cup s; q) \\ C_{\max}(R; p; q) &amp;\geq C_{\max}(R; p \cup s; q) \end{aligned}\] <p>Constraint 10 is a bound on <code class="language-plaintext highlighter-rouge">{Student}</code>, so it’s also a bound on <code class="language-plaintext highlighter-rouge">{Instructor, Student}</code> and on <code class="language-plaintext highlighter-rouge">{Project, Student}</code>: constraints 5 and 6, each <code class="language-plaintext highlighter-rouge">(0, 2)</code>. The upper bound of 2 is inherited from constraint 10. The lower bound stays at the default of 0, because nothing in the design requires a given instructor and student to be working on anything together.</p> <p>The two rules lean in opposite directions and both lose information. Decomposition shrinks the group being counted; augmentation shrinks the group being iterated over. Neither ever produces a bound tighter than the default on its own authority: the minimum of a derived constraint is 1 only when the constraint it came from forces it to be.</p> <h2 id="implied-redundant-or-contradictory">Implied, Redundant, or Contradictory</h2> <p>Let’s be precise about what “follows from” means here, because the same comparison decides three different questions.</p> <p>Bounds are intervals, so a constraint <code class="language-plaintext highlighter-rouge">Card(R; p; q) = (l, u)</code> is contained in another, <code class="language-plaintext highlighter-rouge">(l', u')</code>-shaped one, exactly when <code class="language-plaintext highlighter-rouge">l ≥ l'</code> and <code class="language-plaintext highlighter-rouge">u ≤ u'</code> (<em>i.e.</em>, when its interval sits inside the other). The contained constraint is the stronger statement, since it rules out more instances. Two constraints on the same <code class="language-plaintext highlighter-rouge">(R; p; q)</code> combine to <code class="language-plaintext highlighter-rouge">(max(l, l'), min(u, u'))</code>, and the pair is contradictory exactly when that interval is empty.</p> <p>With that in hand:</p> <ul> <li>A constraint is <strong>implied</strong> when the rest of the design already forces something at least as strong.</li> <li>It is <strong>redundant</strong> when it is implied and adds nothing.</li> <li>The design is <strong>contradictory</strong> when two written constraints have no interval in common.</li> </ul> <p>Two bounds that merely differ are neither. A design that says <code class="language-plaintext highlighter-rouge">(1, 5)</code> for constraint 8, when constraint 10 forces <code class="language-plaintext highlighter-rouge">(1, 2)</code>, isn’t in conflict with itself; it just has a loose bound in it, which is the sort of thing a marker would want to know and a program can point out for free.</p> <h2 id="one-tuple">One Tuple</h2> <p>Let’s change the one constraint that is written, and the whole set of bounds changes with it.</p> <p>Suppose constraint 10 is <code class="language-plaintext highlighter-rouge">(1, 1)</code> instead of <code class="language-plaintext highlighter-rouge">(2, 2)</code>: each student is guided on exactly one (instructor, project) pair. Then constraints 5, 6, 8, and 9 all become <code class="language-plaintext highlighter-rouge">(0, 1)</code> (at most one, with no lower bound), and the rest stay at the default.</p> <table> <thead> <tr> <th style="text-align: left">#</th> <th style="text-align: left">Constraint</th> <th style="text-align: left">Bound</th> </tr> </thead> <tbody> <tr> <td style="text-align: left">5</td> <td style="text-align: left"><code class="language-plaintext highlighter-rouge">{Instructor, Student} → {Project}</code></td> <td style="text-align: left"> <code class="language-plaintext highlighter-rouge">(0, 1)</code> implied</td> </tr> <tr> <td style="text-align: left">6</td> <td style="text-align: left"><code class="language-plaintext highlighter-rouge">{Project, Student} → {Instructor}</code></td> <td style="text-align: left"> <code class="language-plaintext highlighter-rouge">(0, 1)</code> implied</td> </tr> <tr> <td style="text-align: left">8</td> <td style="text-align: left"><code class="language-plaintext highlighter-rouge">{Student} → {Instructor}</code></td> <td style="text-align: left"> <code class="language-plaintext highlighter-rouge">(0, 1)</code> implied</td> </tr> <tr> <td style="text-align: left">9</td> <td style="text-align: left"><code class="language-plaintext highlighter-rouge">{Student} → {Project}</code></td> <td style="text-align: left"> <code class="language-plaintext highlighter-rouge">(0, 1)</code> implied</td> </tr> <tr> <td style="text-align: left">10</td> <td style="text-align: left"><code class="language-plaintext highlighter-rouge">{Student} → {Instructor, Project}</code></td> <td style="text-align: left"> <code class="language-plaintext highlighter-rouge">(1, 1)</code> given</td> </tr> </tbody> </table> <p>Written the other way, this is a derivation everyone has seen before:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>S = Student, I = Instructor, P = Project
+
+S → IP          (given)
+⇒ S → I, S → P  (decomposition)
+S → P ⇒ IS → P  (augmentation)
+S → I ⇒ PS → I  (augmentation)
+</code></pre></div></div> <p>A constraint of the form <code class="language-plaintext highlighter-rouge">Card(R; p; q) = (0, 1)</code> says that each <code class="language-plaintext highlighter-rouge">p</code> determines at most one <code class="language-plaintext highlighter-rouge">q</code>, which is a functional dependency <code class="language-plaintext highlighter-rouge">p → q</code>. Raising the lower bound to 1 adds a requirement that each <code class="language-plaintext highlighter-rouge">p</code> has a <code class="language-plaintext highlighter-rouge">q</code> at all, which is total participation rather than part of the dependency. Drop the cardinality notation and the derivations above are the standard decomposition and augmentation rules for functional dependencies, which I find reassuring: the notation of <a href="/blog/2025/Unified-Cardinality-Constraints/">Unified Cardinality Constraints</a> wasn’t invented so much as recovered.</p> <p>Cardinality constraints and functional dependencies remain different classes of business rule. Cardinality constraints live in the ER model and carry application semantics: that every project has at least one department behind it is a statement about a relationship set, not about the tuples of any relation, and no functional dependency expresses it. Functional dependencies live in the relational model, and normalization is about them. Combining the two is what <a href="https://doi.org/10.1145/3448016.3459238" rel="external nofollow noopener" target="_blank">Link and Wei</a> and <a href="https://doi.org/10.1016/j.is.2023.102208" rel="external nofollow noopener" target="_blank">Link et al.</a> do, to reach a normal form with update inefficiency and join efficiency quantified. That’s a different post.</p> </div> </article> <div id="giscus_thread" style="max-width: 930px; margin: 0 auto;"> <br> <script>
+    (function setupGiscus() {
+      function determineGiscusTheme() {
+        var theme = localStorage.getItem("theme") || document.documentElement.getAttribute("data-theme") || "system";
+if (theme === "dark") return "dark";
+if (theme === "light") return "light";
+var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+return prefersDark ? "dark" : "light";
+
+      }
+
+      var giscusTheme = determineGiscusTheme();
+      var attrs = {
+        src: "https://giscus.app/client.js",
+        "data-repo": "h365chen/h365chen.github.io",
+        "data-repo-id": "R_kgDOON3gHg",
+        "data-category": "Comments",
+        "data-category-id": "DIC_kwDOON3gHs4CpNS7",
+        "data-mapping": "title",
+        "data-strict": "1",
+        "data-reactions-enabled": "1",
+        "data-emit-metadata": "0",
+        "data-input-position": "bottom",
+        "data-theme": giscusTheme,
+        "data-lang": "en",
+        crossorigin: "anonymous",
+        async: true
+      };
+
+      var giscusScript = document.createElement("script");
+      Object.entries(attrs).forEach(function(entry) { giscusScript.setAttribute(entry[0], entry[1]); });
+      var host = document.getElementById("giscus_thread");
+      if (host) host.appendChild(giscusScript);
+    })();
+  </script> <noscript> Please enable JavaScript to view the <a href="http://giscus.app/?ref_noscript" rel="external nofollow noopener" target="_blank">comments powered by giscus.</a> </noscript> </div> </div> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Huanyi Chen. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: true
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script src="/assets/js/bootstrap-compat.js?v=b5579a3408e7c44d505c6a9755578409"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script defer src="https://cdn.jsdelivr.net/npm/tocbot@4.36.4/dist/tocbot.min.js" integrity="sha256-lo/r+jQ81wWrxdIiiiEEd538z4+dTJTt+leOuAS7GCw=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script async src="https://www.googletagmanager.com/gtag/js?id=G-J33LN321SW"></script> <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-J33LN321SW");
+</script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "About",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-blog",
+          title: "Blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
+        },{id: "nav-teaching",
+          title: "Teaching",
+          description: "Courses that I taught, participated in, and enjoyed.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/teaching/";
+          },
+        },{id: "nav-publications",
+          title: "Publications",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-repositories",
+          title: "Repositories",
+          description: "Repositories I created that I hope will benefit a broader audience.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/repositories/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "nav-tennis",
+          title: "Tennis",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/tennis/";
+          },
+        },{id: "post-decomposition-and-augmentation",
+        
+          title: "Decomposition and Augmentation",
+        
+        description: "About deriving implied cardinality constraints from the one that is written",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Decomposition-and-Augmentation/";
+          
+        },
+      },{id: "post-implicit-cardinality-constraints",
+        
+          title: "Implicit Cardinality Constraints",
+        
+        description: "About the cardinality constraints a design implies without stating them",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/Implicit-Cardinality-Constraints/";
+          
+        },
+      },{id: "post-unified-cardinality-constraints",
+        
+          title: "Unified Cardinality Constraints",
+        
+        description: "About interpreting cardinality constraints in UML and ER designs",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Unified-Cardinality-Constraints/";
+          
+        },
+      },{id: "post-look-here-or-look-across",
+        
+          title: "Look Here or Look Across",
+        
+        description: "About interpreting cardinality constraints in UML and ER designs",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/Look-Here-Look-Across/";
+          
+        },
+      },{id: "post-finding-articulation-points-and-biconnected-components",
+        
+          title: "Finding Articulation Points and Biconnected Components",
+        
+        description: "An application of using Depth First Search (DFS) to find articulation points and biconnected components of a graph",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2025/DFS-Articulation-Points/";
+          
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%68%75%61%6E%79%69.%63%68%65%6E@%75%77%61%74%65%72%6C%6F%6F.%63%61", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/huanyichen", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=ibdj9O4AAAAJ", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
