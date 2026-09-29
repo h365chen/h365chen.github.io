@@ -9,9 +9,19 @@ giscus_comments: true
 related_posts: false
 pretty_table: false
 citation: false
+mermaid:
+  enabled: true
+  zoomable: false
 toc:
   sidebar: left
 _styles: |
+  p.aside {
+    font-size: 0.875em;
+    font-style: italic;
+  }
+  mjx-container[jax="CHTML"][display="true"] {
+    overflow: visible;
+  }
   table {
     margin-bottom: 2rem;
   }
@@ -19,28 +29,48 @@ _styles: |
 
 ## Introduction
 
-The [previous post]({% post_url 2026-02-10-Implicit-Cardinality-Constraints %}) started from one
-written cardinality constraint on the ternary relationship set `guide`, and ended with four that
-follow from it. This post is about where those four come from: the two rules that produce them,
-what it means for one bound to follow from another, and what the notation has to do with
-functional dependencies.
+In the [previous post]({% post_url 2026-02-10-Implicit-Cardinality-Constraints %}), I discussed how one
+explicitly written cardinality constraint on the ternary relationship (i.e., `guide`) could lead to multiple
+implicit ones. However, I discussed it using a concrete example which seems not to be generalizable.
+Therefore, in this post, I will discuss how we can infer those implicit rules: the two rules behind them.
 
-The constraint numbers below are that post's. Constraint 10, `{Student} → {Instructor, Project}`
-with bound `(2, 2)`, is the written one; 5 and 6 are `{Instructor, Student} → {Project}` and
-`{Project, Student} → {Instructor}`; 8 and 9 are `{Student} → {Instructor}` and
-`{Student} → {Project}`.
+The constraint numbers below are that post's, collected here so that a number can be looked up
+without leaving the page. The four marked `implied` are the ones this post derives; the rest are
+left at the default.
+{: .aside }
+
+| #   | Constraint                          | Bound            |
+| :-- | :---------------------------------- | :--------------- |
+| 1   | `{Instructor} → {Project}`          | `(0, *)`         |
+| 2   | `{Instructor} → {Student}`          | `(0, *)`         |
+| 3   | `{Project} → {Student}`             | `(0, *)`         |
+| 4   | `{Instructor, Project} → {Student}` | `(0, *)`         |
+| 5   | `{Instructor, Student} → {Project}` | `(0, 2)` implied |
+| 6   | `{Project, Student} → {Instructor}` | `(0, 2)` implied |
+| 7   | `{Project} → {Instructor}`          | `(0, *)`         |
+| 8   | `{Student} → {Instructor}`          | `(1, 2)` implied |
+| 9   | `{Student} → {Project}`             | `(1, 2)` implied |
+| 10  | `{Student} → {Instructor, Project}` | `(2, 2)` given   |
+| 11  | `{Project} → {Instructor, Student}` | `(0, *)`         |
+| 12  | `{Instructor} → {Project, Student}` | `(0, *)`         |
 
 ## Decomposition and Augmentation
 
-We didn't find the four implied constraints by staring. They came from two rules, and it's worth
-naming them, because a program needs them by name.
+I refer these two rules as the _decomposition_ rule and the _augmentation_ rule.
 
-**Decomposition** relates a group to a larger group that contains it. Each `q`-value a tuple has
-comes with at least one `s`, so the number of `q`s can never exceed the number of `(q, s)` pairs:
+### Decomposition
+
+Decomposition relates a group to a larger group that contains it. If each `q` has to
+come with at least one `s`, then the number of `q`s can never exceed the number of `(q, s)` pairs:
 
 $$
 \begin{aligned}
-C_{\min}(R; p; q \cup s) &\geq C_{\min}(R; p; q) \\
+C_{\min}(R; p; q \cup s) &\geq C_{\min}(R; p; q)
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
 C_{\max}(R; p; q \cup s) &\geq C_{\max}(R; p; q)
 \end{aligned}
 $$
@@ -48,19 +78,50 @@ $$
 Knowing a bound on `p` over the pair-group $q \cup s$, we can therefore bound `p` over the
 smaller group `q`. Constraint 10 is a bound on `{Student}` over `{Instructor, Project}`, so
 decomposing gives bounds on `{Student}` over `{Instructor}` and over `{Project}`: constraints 8
-and 9, `(1, 2)` each. The maximum carries over unchanged. The minimum can drop, and does: the
-two pairs may name the same instructor. It can't drop below 1, because a student who has a pair
-at all has an instructor.
+and 9, `(1, 2)` each. The maximum carries over unchanged. The minimum can drop since
+there could be two pairs naming the same instructor. It can't drop below 1, because a student who has a pair
+at all has an instructor. Both of these instances give `s1` the two pairs that constraint 10
+asks for:
 
-**Augmentation** relates a group to a larger group that contains it on the other side. An
+```mermaid
+flowchart TB
+    subgraph two["two instructors"]
+        direction LR
+        sB((s1)) --> b1["(i1, p1, s1)"]
+        sB --> b2["(i2, p2, s1)"]
+        b1 --> iB((i1))
+        b2 --> iC((i2))
+    end
+    subgraph one["one instructor"]
+        direction LR
+        sA((s1)) --> a1["(i1, p1, s1)"]
+        sA --> a2["(i1, p2, s1)"]
+        a1 --> iA((i1))
+        a2 --> iA
+    end
+```
+
+One cluster gives `s1` a single instructor, the other gives two, and those are the two ends of
+the interval:
+
+`{Student} → {Instructor, Project}` = `(2, 2)` ⇒ `{Student} → {Instructor}` = `(1, 2)`
+
+### Augmentation
+
+Augmentation relates a group to a larger group that contains it on the other side. An
 `(p, s)`-pair determines a `p`, and the `q`s available to the pair are among those available to
 that `p`. So anything true of every `p` is true of every `(p, s)` as well, and the bound tightens
 with the requirement:
 
 $$
 \begin{aligned}
-C_{\min}(R; p; q) &\leq C_{\min}(R; p \cup s; q) \\
-C_{\max}(R; p; q) &\geq C_{\max}(R; p \cup s; q)
+C_{\min}(R; p \cup s; q) &\geq C_{\min}(R; p; q)
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+C_{\max}(R; p \cup s; q) &\leq C_{\max}(R; p; q)
 \end{aligned}
 $$
 
@@ -69,15 +130,38 @@ Constraint 10 is a bound on `{Student}`, so it's also a bound on `{Instructor, S
 constraint 10. The lower bound stays at the default of 0, because nothing in the design requires
 a given instructor and student to be working on anything together.
 
+Suppose the pair-group is where the tight bound sits instead: `{Instructor, Project} → {Student}` =
+`(1, 1)`, every pair in exactly one tuple. Counting students per instructor, both ends of `(0, *)`
+are reachable:
+
+```mermaid
+flowchart TB
+    subgraph many["as many as we like"]
+        direction LR
+        iB((i1)) --> t1["(i1, p1, s1)"]
+        iB --> t2["(i1, p2, s2)"]
+        iB --> t3["(i1, ⋮, ⋮)"]
+        t1 --> sB((s1))
+        t2 --> sC((s2))
+        t3 --> sD((⋮))
+    end
+    subgraph none["no student"]
+        direction LR
+        iA((i2))
+    end
+```
+
+One cluster gives `i1` a student per pair, without limit; the other gives `i2` none, since `i2` is
+in no pair. Those are the two ends of `(0, *)`:
+
+`{Instructor, Project} → {Student}` = `(1, 1)` ⇒ `{Instructor} → {Student}` = `(0, *)`
+
 The two rules lean in opposite directions and both lose information. Decomposition shrinks the
 group being counted; augmentation shrinks the group being iterated over. Neither ever produces a
 bound tighter than the default on its own authority: the minimum of a derived constraint is 1
 only when the constraint it came from forces it to be.
 
 ## Implied, Redundant, or Contradictory
-
-Let's be precise about what "follows from" means here, because the same comparison decides three
-different questions.
 
 Bounds are intervals, so a constraint `Card(R; p; q) = (l, u)` is contained in another,
 `(l', u')`-shaped one, exactly when `l ≥ l'` and `u ≤ u'` (_i.e._, when its interval sits inside
@@ -111,31 +195,3 @@ with no lower bound), and the rest stay at the default.
 | 8   | `{Student} → {Instructor}`          | `(0, 1)` implied |
 | 9   | `{Student} → {Project}`             | `(0, 1)` implied |
 | 10  | `{Student} → {Instructor, Project}` | `(1, 1)` given   |
-
-Written the other way, this is a derivation everyone has seen before:
-
-```
-S = Student, I = Instructor, P = Project
-
-S → IP          (given)
-⇒ S → I, S → P  (decomposition)
-S → P ⇒ IS → P  (augmentation)
-S → I ⇒ PS → I  (augmentation)
-```
-
-A constraint of the form `Card(R; p; q) = (0, 1)` says that each `p` determines at most one `q`,
-which is a functional dependency `p → q`. Raising the lower bound to 1 adds a requirement that
-each `p` has a `q` at all, which is total participation rather than part of the dependency. Drop
-the cardinality notation and the derivations above are the standard decomposition and
-augmentation rules for functional dependencies, which I find reassuring: the notation of
-[Unified Cardinality Constraints]({% post_url 2025-09-10-Unified-Cardinality-Constraints %})
-wasn't invented so much as recovered.
-
-Cardinality constraints and functional dependencies remain different classes of business rule.
-Cardinality constraints live in the ER model and carry application semantics: that every project
-has at least one department behind it is a statement about a relationship set, not about the
-tuples of any relation, and no functional dependency expresses it. Functional dependencies live
-in the relational model, and normalization is about them. Combining the two is what
-[Link and Wei](https://doi.org/10.1145/3448016.3459238) and
-[Link et al.](https://doi.org/10.1016/j.is.2023.102208) do, to reach a normal form with update
-inefficiency and join efficiency quantified. That's a different post.

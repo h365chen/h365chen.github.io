@@ -11,7 +11,7 @@ pretty_table: false
 citation: false
 mermaid:
   enabled: true
-  zoomable: true
+  zoomable: false
 toc:
   sidebar: left
 _styles: |
@@ -26,7 +26,7 @@ _styles: |
 
 ## Introduction
 
-In the [previous post]({% post_url 2025-09-10-Unified-Cardinality-Constraints %}), we wrote
+In the [previous post]({% post_url 2025-09-10-Unified-Cardinality-Constraints %}), I wrote
 explicit cardinality constraints down as data, `Card(R; p; q) = (lower, upper)`, in a notation
 that reads the same under both the UML and the textbook conventions. Writing them down is also
 what makes them something a program can read, and once a program can read them, it can verify
