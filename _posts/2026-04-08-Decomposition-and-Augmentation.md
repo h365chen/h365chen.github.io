@@ -4,6 +4,7 @@ title: Decomposition and Augmentation
 date: 2026-04-08
 description: About deriving implied cardinality constraints from the one that is written
 categories: notes
+tags: [er-model]
 thumbnail: assets/img/posts/2025-03-30-intro.png
 giscus_comments: true
 related_posts: false

@@ -4,6 +4,7 @@ title: Finding Articulation Points and Biconnected Components
 date: 2025-03-25T15:40:16-04:00
 description: An application of using Depth First Search (DFS) to find articulation points and biconnected components of a graph
 categories: notes
+tags: [algorithm]
 thumbnail: assets/img/posts/2025-03-25-DFS.jpg
 ---
 

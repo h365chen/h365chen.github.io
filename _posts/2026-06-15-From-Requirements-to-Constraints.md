@@ -4,6 +4,7 @@ title: From Requirements to Constraints
 date: 2026-06-15
 description: About writing the three business requirements of a sample ER design as cardinality constraints
 categories: notes
+tags: [er-model]
 thumbnail: assets/img/posts/2025-03-30-intro.png
 giscus_comments: true
 related_posts: false

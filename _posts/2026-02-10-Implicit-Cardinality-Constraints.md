@@ -4,6 +4,7 @@ title: Implicit Cardinality Constraints
 date: 2026-02-10
 description: About the cardinality constraints a design implies without stating them
 categories: notes
+tags: [er-model]
 thumbnail: assets/img/posts/2025-03-30-intro.png
 giscus_comments: true
 related_posts: false

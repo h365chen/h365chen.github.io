@@ -4,6 +4,7 @@ title: Look Here or Look Across
 date: 2025-03-30
 description: About interpreting cardinality constraints in UML and ER designs
 categories: notes
+tags: [er-model]
 thumbnail: assets/img/posts/2025-03-30-intro.png
 giscus_comments: true
 related_posts: false
