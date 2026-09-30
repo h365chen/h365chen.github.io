@@ -8,7 +8,7 @@ thumbnail: assets/img/posts/2025-03-30-intro.png
 giscus_comments: true
 related_posts: false
 pretty_table: false
-citation: true
+citation: false
 toc:
   sidebar: left
 ---
