@@ -147,3 +147,32 @@ blockquote {
 body {
   font-family: "Noto Sans", sans-serif;
 }
+
+/* ---------------------------------------------------------------------------
+ * Site override (al-folio-core#assets/tailwind/app.css)
+ *
+ * The upstream heading scale steps down by only 0.25rem per level (h2 2rem,
+ * h3 1.75rem) and sets every heading to font-weight 300, so `##` and `###` read
+ * as peers in post bodies. These unlayered rules win over the Tailwind base
+ * layer and widen the h2→h3 step to 0.5rem, with h4–h6 cascading below it so
+ * the scale stays monotonic.
+ * ------------------------------------------------------------------------- */
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
