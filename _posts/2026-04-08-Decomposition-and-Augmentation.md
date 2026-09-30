@@ -54,7 +54,7 @@ left at the default.
 | 11  | `{Project} → {Instructor, Student}` | `(0, *)`         |
 | 12  | `{Instructor} → {Project, Student}` | `(0, *)`         |
 
-## Decomposition and Augmentation
+## The Two Rules
 
 I refer these two rules as the _decomposition_ rule and the _augmentation_ rule.
 
